@@ -13,9 +13,13 @@ function TodoTable(props) {
             <tbody>
                 {
                     props.todos.map(todo => (
-                        <TodoRowItem rowNumber={todo.rowNumber}
+                        <TodoRowItem 
+                        key={todo.rowNumber}
+                        rowNumber={todo.rowNumber}
                         rowDescription={todo.rowDescription}
-                        rowAssigned={todo.rowAssigned}/>            
+                        rowAssigned={todo.rowAssigned}
+                        deleteTodo={props.deleteTodo}
+                        />            
                     ))
                 }    
             </tbody>
